@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="about">
+    <nav>
+        <div class="box1">Patcharapon Seesaikham</div>
+        <a href="index.html" class="box">Home</a>
+        <a href="about.html" class="box active">About</a>
+        <a href="education.html" class="box">Education</a>
+        <a href="activities.html" class="box">Activities</a>
+        <a href="contact.html" class="box">Contact</a>
+    </nav>
+    <main>
+        <h1 class="header">About Me</h1>
+    </main>
+    <section class="about-content">
+        <div class="sop-card">
+            <p>
+                ผมชื่อพัชรพล ศรีใสคำ ชื่อเล่นพอ เป็นนักเรียนแผนการเรียนวิทยาศาสตร์-คณิตศาสตร์
+                สนใจด้านวิศวกรรมศาสตร์ ชอบเรียนรู้สิ่งใหม่ ๆ อยู่เสมอ และเชื่อว่าการฝึกฝนอย่างสม่ำเสมอ
+                ทั้งในห้องเรียนและนอกห้องเรียนจะช่วยพัฒนาตัวเองให้ก้าวไปสู่เป้าหมายที่วางไว้ได้
+            </p>
+        </div>
+
+        <div class="hobby-grid">
+            <div class="hobby-card">
+                <div class="hobby-icon">🏃</div>
+                <p>Running</p>
+                <img src="running.jpg" alt="Running" class="hobby-img" onclick="openLightbox(this.src, this.alt)">
+            </div>
+            <div class="hobby-card">
+                <div class="hobby-icon">🏊</div>
+                <p>Swimming</p>
+                <img src="swim.PNG" alt="Swimming" class="hobby-img" onclick="openLightbox(this.src, this.alt)">
+            </div>
+            <div class="hobby-card">
+                <div class="hobby-icon">🚴</div>
+                <p>Cycling</p>
+                <img src="cycling.PNG" alt="Cycling" class="hobby-img" onclick="openLightbox(this.src, this.alt)">
+            </div>
+            <div class="hobby-card">
+                <div class="hobby-icon">🎮</div>
+                <p>Gaming</p>
+                <img src="gaming.PNG" alt="Gaming" class="hobby-img" onclick="openLightbox(this.src, this.alt)">
+            </div>
+            <div class="hobby-card">
+                <div class="hobby-icon">📚</div>
+                <p>Learning</p>
+                <img src="learning.jpg" alt="Learning" class="hobby-img" onclick="openLightbox(this.src, this.alt)">
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox overlay -->
+    <div id="lightbox-overlay" class="lightbox-overlay" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" class="lightbox-img" src="" alt="">
+        <p id="lightbox-caption" class="lightbox-caption"></p>
+    </div>
+
+    <script>
+        function openLightbox(src, caption) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-caption').textContent = caption || '';
+            document.getElementById('lightbox-overlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox-overlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // ปิดด้วยปุ่ม Esc
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
